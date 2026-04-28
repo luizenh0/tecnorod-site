@@ -1,0 +1,420 @@
+/* Variáveis de Cores (Azul, Verde, Branco) */
+:root {
+    --azul-confianca: #0D3B66;
+    --verde-seguranca: #28a745;
+    --verde-hover: #218838;
+    --branco: #ffffff;
+    --cinza-claro: #f4f7f6;
+    --texto-escuro: #333333;
+    --texto-claro: #666666;
+}
+
+/* Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cinza-claro);
+    color: var(--texto-escuro);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header e Navegação */
+header {
+    background-color: var(--branco);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Nova Logo em Texto */
+.logo-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    line-height: 1;
+}
+
+.logo-texto {
+    font-size: 2.2rem;
+    font-weight: 700;
+    /* Deixa a fonte bem grossa (Negrito) */
+    color: #4ade80;
+    /* Tom de verde claro e moderno */
+    letter-spacing: -1px;
+}
+
+.logo-subtexto {
+    font-size: 0.9rem;
+    font-weight: 700;
+    /* Deixa o subtítulo em Negrito também */
+    color: #333333;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--verde-seguranca);
+}
+
+/* Botão Global */
+.btn {
+    background-color: var(--verde-seguranca);
+    color: var(--branco);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: var(--verde-hover);
+    transform: translateY(-2px);
+    color: var(--branco);
+}
+
+.btn-azul {
+    background-color: var(--azul-confianca);
+}
+
+.btn-azul:hover {
+    background-color: #092846;
+}
+
+/* Home / Banner */
+#home {
+    margin-top: 70px;
+    background: linear-gradient(rgba(13, 59, 102, 0.8), rgba(13, 59, 102, 0.8)), url('https://images.unsplash.com/photo-1584820927498-cafe8c1a7674?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+    color: var(--branco);
+    text-align: center;
+    padding: 100px 20px;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#home h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    max-width: 800px;
+    animation: fadeInDown 1s ease;
+}
+
+#home p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease;
+}
+
+/* Diferenciais */
+.diferenciais {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 50px 5%;
+    background: var(--branco);
+    margin-top: -50px;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dif-item {
+    text-align: center;
+    flex: 1 1 200px;
+}
+
+.dif-item i {
+    font-size: 2.5rem;
+    color: var(--verde-seguranca);
+    margin-bottom: 15px;
+}
+
+/* Títulos de Seção */
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--azul-confianca);
+    margin-bottom: 40px;
+    padding-top: 80px;
+}
+
+/* Serviços */
+#servicos {
+    padding: 50px 5%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--branco);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-bottom: 4px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-bottom: 4px solid var(--verde-seguranca);
+}
+
+.card i {
+    font-size: 2.5rem;
+    color: var(--azul-confianca);
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: var(--azul-confianca);
+}
+
+/* Sobre Nós */
+#sobre {
+    background: var(--branco);
+    padding: 80px 5%;
+}
+
+.sobre-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+    align-items: center;
+}
+
+.sobre-texto {
+    flex: 1 1 500px;
+}
+
+.sobre-imagem {
+    flex: 1 1 400px;
+    text-align: center;
+}
+
+.sobre-imagem img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.selos {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.selo {
+    background: var(--cinza-claro);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--azul-confianca);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* FAQ */
+#faq {
+    padding: 50px 5%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.faq-item {
+    background: var(--branco);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.faq-pergunta {
+    padding: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    color: var(--azul-confianca);
+}
+
+.faq-resposta {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    color: var(--texto-claro);
+}
+
+.faq-item.ativo .faq-resposta {
+    padding: 20px;
+    max-height: 200px;
+}
+
+/* Contato */
+#contato {
+    padding: 80px 5%;
+    background: var(--azul-confianca);
+    color: var(--branco);
+}
+
+.contato-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.form-contato,
+.info-contato {
+    flex: 1 1 400px;
+}
+
+.form-contato input,
+.form-contato textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.info-contato h3 {
+    margin-bottom: 20px;
+}
+
+.info-contato p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #092846;
+    color: var(--branco);
+    font-size: 0.9rem;
+}
+
+/* Botão Flutuante WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* Animações Keyframes */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    #home h1 {
+        font-size: 2rem;
+    }
+
+    .diferenciais {
+        margin-top: 20px;
+    }
+}
