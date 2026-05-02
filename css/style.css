@@ -117,31 +117,94 @@ header {
     background-color: #092846;
 }
 
-/* Home / Banner */
+/* Home / Banner Atualizado */
 #home {
     margin-top: 70px;
-    background: linear-gradient(rgba(13, 59, 102, 0.8), rgba(13, 59, 102, 0.8)), url('https://images.unsplash.com/photo-1584820927498-cafe8c1a7674?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+    /* Compensa o menu fixo */
+    background-color: var(--azul-confianca);
+    /* Fundo azul sólido */
     color: var(--branco);
-    text-align: center;
-    padding: 100px 20px;
+    padding: 80px 5% 120px 5%;
+    /* Espaço extra embaixo para os diferenciais não sobreporem a imagem */
     min-height: 80vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
-#home h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    max-width: 800px;
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    gap: 40px;
+}
+
+.home-texto {
+    flex: 1;
+    /* Ocupa metade do espaço */
+    max-width: 600px;
     animation: fadeInDown 1s ease;
 }
 
-#home p {
+.home-texto h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.home-texto p {
     font-size: 1.2rem;
     margin-bottom: 30px;
+    color: #e0e0e0;
+    /* Um branco levemente acinzentado para leitura suave */
+}
+
+.home-botoes {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.home-imagem {
+    flex: 1;
+    /* Ocupa a outra metade */
+    display: flex;
+    justify-content: flex-end;
     animation: fadeInUp 1s ease;
+}
+
+.home-imagem img {
+    max-width: 100%;
+    height: auto;
+    max-height: 550px;
+    /* Limita a altura para não ficar gigante */
+    object-fit: contain;
+}
+
+/* Responsividade para o novo banner */
+@media (max-width: 992px) {
+    .home-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-texto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-imagem {
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .home-texto h1 {
+        font-size: 2.5rem;
+    }
 }
 
 /* Diferenciais */
