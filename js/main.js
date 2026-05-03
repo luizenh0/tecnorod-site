@@ -15,22 +15,50 @@ faqItems.forEach(item => {
     });
 });
 
-// Validação básica do formulário no Frontend (Evita envio vazio)
+// Envio do formulário direto para o WhatsApp
 const form = document.getElementById('contactForm');
 
 form.addEventListener('submit', function (e) {
     e.preventDefault(); // Impede o recarregamento da página
 
-    // Sanitização básica no lado do cliente
+    // Pega os valores digitados
     const nome = document.getElementById('nome').value.trim();
+    const telefone = document.getElementById('telefone').value.trim();
     const email = document.getElementById('email').value.trim();
+    const mensagem = document.getElementById('mensagem').value.trim();
 
-    if (nome === "" || email === "") {
-        alert("Por favor, preencha todos os campos obrigatórios.");
+    if (nome === "" || mensagem === "") {
+        alert("Por favor, preencha seu nome e como podemos ajudar.");
         return;
     }
 
-    // Aqui futuramente entrará a chamada AJAX (fetch) para o seu backend PHP
-    alert("Mensagem enviada com sucesso! Nossa equipe entrará em contato em breve.");
+    // Monta o texto que vai chegar no WhatsApp da empresa
+    const textoCustomizado = `Olá, Tecnorod! Vim pelo site.%0A%0A*Nome:* ${nome}%0A*Contato:* ${telefone}%0A*E-mail:* ${email}%0A%0A*Mensagem:* ${mensagem}`;
+
+    // Número do WhatsApp principal da Tecnorod (Apenas números, com o 55)
+    const numeroWhatsApp = "5585991306317";
+
+    // Abre a janela do WhatsApp já com o texto preenchido
+    window.open(`https://wa.me/${numeroWhatsApp}?text=${textoCustomizado}`, '_blank');
+
+    // Limpa o formulário depois de enviar
     form.reset();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const banner = document.getElementById("cookie-banner");
+    const btn = document.getElementById("btn-cookies");
+
+    // Verifica se o usuário já aceitou os cookies antes
+    if (!localStorage.getItem("cookiesAceitos")) {
+        setTimeout(() => {
+            banner.classList.add("show");
+        }, 1000); // Aparece 1 segundo depois que a página carrega
+    }
+
+    btn.addEventListener("click", function () {
+        banner.classList.remove("show");
+        // Salva no navegador que ele já aceitou para não incomodar de novo
+        localStorage.setItem("cookiesAceitos", "true");
+    });
 });
