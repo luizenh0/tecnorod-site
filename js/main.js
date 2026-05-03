@@ -57,8 +57,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     btn.addEventListener("click", function () {
-        banner.classList.remove("show");
-        // Salva no navegador que ele já aceitou para não incomodar de novo
+        banner.classList.remove("show"); // Tira a animação
+
+        // Força o sumiço imediato para evitar bugs no mobile
+        banner.style.display = "none";
+
         localStorage.setItem("cookiesAceitos", "true");
     });
 });

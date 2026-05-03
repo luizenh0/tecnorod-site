@@ -225,6 +225,46 @@ header {
     color: #333333;
 }
 
+/* Banner de Cookies - Base para todos os tamanhos */
+.cookie-container {
+    position: fixed;
+    bottom: -150px;
+    /* Começa escondido abaixo da tela */
+    left: 0;
+    width: 100%;
+    background-color: #0b2239;
+    color: #ffffff;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 99999;
+    /* Fica na frente de tudo, inclusive do WhatsApp */
+    transition: bottom 0.5s ease;
+}
+
+.cookie-container.show {
+    bottom: 0;
+    /* Sobe para aparecer */
+}
+
+.cookie-container p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+#btn-cookies {
+    background-color: #25D366;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 100000;
+}
+
 /* Responsividade para o celular e tablets */
 @media (max-width: 992px) {
 
@@ -303,6 +343,20 @@ header {
     header .btn i {
         font-size: 1rem;
         margin-right: 5px;
+    }
+
+    /* Ajuste do Cookie para telas menores */
+    .cookie-container {
+        flex-direction: column;
+        /* Coloca o botão embaixo do texto */
+        text-align: center;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .cookie-container p {
+        padding-right: 0;
+        font-size: 0.85rem;
     }
 }
 
