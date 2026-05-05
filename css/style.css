@@ -711,3 +711,19 @@ footer {
         gap: 15px;
     }
 }
+
+/* Correção do botão do WhatsApp no cabeçalho */
+.btn-topo-zap {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap !important;
+}
+
+/* Esconde o botão no celular (telas menores que 768px) */
+@media (max-width: 768px) {
+    .btn-topo-zap {
+        display: none !important;
+    }
+}
