@@ -1,0 +1,32 @@
+---
+import '../styles/style.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Tecnorod Controle de Pragas | Segurança e Eficiência",
+  description = "Tecnorod Controle de Pragas. Especialistas em dedetização, desratização, descupinização e sanitização de ambientes. Ambientes seguros e livres de pragas."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="dedetização, controle de pragas, desratização, descupinização, sanitização, Tecnorod" />
+    <meta name="author" content="Tecnorod Controle de Pragas" />
+    <title>{title}</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <slot />
+    <script src="/js/main.js" is:inline></script>
+</body>
+</html>
